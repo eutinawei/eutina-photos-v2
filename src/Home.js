@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import paper from './assets/paper.jpg'
 import DesktopHeader from './components/DesktopHeader'
+import DesktopCName from './components/DesktopCName'
+import DesktopEName from './components/DesktopEName'
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -13,6 +15,8 @@ const Home = () => {
   return (
     <Wrapper>
       <DesktopHeader />
+      <DesktopCName />
+      <DesktopEName />
     </Wrapper>
   )
 }

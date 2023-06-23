@@ -34,11 +34,11 @@ const Icon = styled.div`
   margin: 14px 0px;
 `
 
-const HomeIcon = styled.Icon`
+const HomeIcon = styled(Icon)`
   background: url(${homeIcon}) no-repeat center/cover; 
 `
 
-const YoutubeIcon = styled.Icon`
+const YoutubeIcon = styled(Icon)`
   background: url(${youtubeIcon}) no-repeat center/cover; 
 `
 
