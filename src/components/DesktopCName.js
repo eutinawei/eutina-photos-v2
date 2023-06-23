@@ -24,7 +24,7 @@ const Name = styled.div`
   height: 400px;
   background: url(${cname}) no-repeat center/cover;
   &:not(:last-child) {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 `
 

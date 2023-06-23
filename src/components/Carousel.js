@@ -47,7 +47,7 @@ const YearTitle = styled.div`
 const Sites = styled.div`
   position: absolute;
   left: ${displacementLength};
-  bottom: 2vh;
+  bottom: 1vh;
 `
 
 const SiteTitle = styled.p`
