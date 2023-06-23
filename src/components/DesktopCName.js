@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import cname from '../assets/cname_vertical.png'
+import cname from '../assets/home/cname_vertical.png'
 
 const MoveUpDown = keyframes`
   to {

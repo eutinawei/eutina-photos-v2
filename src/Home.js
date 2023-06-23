@@ -1,9 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import paper from './assets/paper.jpg'
+import paper from './assets/home/paper.jpg'
 import DesktopHeader from './components/DesktopHeader'
 import DesktopCName from './components/DesktopCName'
 import DesktopEName from './components/DesktopEName'
+import Carousel from './components/Carousel'
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -17,6 +18,7 @@ const Home = () => {
       <DesktopHeader />
       <DesktopCName />
       <DesktopEName />
+      <Carousel />
     </Wrapper>
   )
 }

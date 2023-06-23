@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import ename from '../assets/ename_vertical.png'
+import ename from '../assets/home/ename_vertical.png'
 
 const MoveUpDown = keyframes`
   to {

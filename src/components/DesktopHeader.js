@@ -1,7 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import homeIcon from '../assets/home.png'
-import youtubeIcon from '../assets/youtube.png'
+import homeIcon from '../assets/home/home.png'
+import homeIconHover from '../assets/home/home-hover.png'
+import youtubeIcon from '../assets/home/youtube.png'
+import youtubeIconHover from '../assets/home/youtube-hover.png'
+
+const orange = "#E85112"
 
 const Wrapper = styled.div``
 
@@ -35,17 +39,26 @@ const Icon = styled.div`
 `
 
 const HomeIcon = styled(Icon)`
-  background: url(${homeIcon}) no-repeat center/cover; 
+  background: url(${homeIcon}) no-repeat center/cover;
+  &:hover {
+    background: url(${homeIconHover}) no-repeat center/cover;
+  }
 `
 
 const YoutubeIcon = styled(Icon)`
-  background: url(${youtubeIcon}) no-repeat center/cover; 
+  background: url(${youtubeIcon}) no-repeat center/cover;
+  &:hover {
+    background: url(${youtubeIconHover}) no-repeat center/cover;
+  }
 `
 
 const TextIcon = styled.div`
-  margin: 21px 0px;
+  margin: 18px 0px;
   font-size: 18px;
   font-weight: bold;
+  &:hover {
+    color: ${orange};
+  }
 `
 
 const OptionDivider = styled.div`
