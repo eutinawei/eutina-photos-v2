@@ -4,7 +4,7 @@ import leftArrow from '../assets/home/left-arrow.png'
 import leftArrowHover from '../assets/home/left-arrow-hover.png'
 import rightArrow from '../assets/home/right-arrow.png'
 import rightArrowHover from '../assets/home/right-arrow-hover.png'
-import chicagoImage from '../assets/home/chicago.jpg'
+import chicagoImage from '../assets/home/Chicago.jpg'
 
 const displacementLength = "-5.5vh"
 const orange = "#E85112"
