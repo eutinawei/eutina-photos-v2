@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import leftArrow from '../assets/home/left-arrow.png'
 import leftArrowHover from '../assets/home/left-arrow-hover.png'
 import rightArrow from '../assets/home/right-arrow.png'
 import rightArrowHover from '../assets/home/right-arrow-hover.png'
-import chicagoImage from '../assets/home/Chicago.jpg'
+import seattleImage from '../assets/home/seattle.jpg'
+import bayAreaImage from '../assets/home/bayarea.jpg'
+import cities from '../constants/cities'
 
 const displacementLength = "-5.5vh"
 const orange = "#E85112"
@@ -61,14 +63,19 @@ const SiteTitle = styled.p`
 const Image = styled.div`
   width: 60vh;
   height: 60vh;
-  background: url(${chicagoImage}) no-repeat center/cover;
+  background: url(${props => props.image}) no-repeat center/cover;
+  filter: grayscale(1);
+  &:hover {
+    filter: grayscale(0);
+  }
 `
 
-const Arrow = styled.div`
+const Arrow = styled.button`
   position: absolute;
   top: calc(30vh - 15px);
   width: 30px;
   height: 30px;
+  border: none;
 `
 
 const LeftArrow = styled(Arrow)`
@@ -96,9 +103,11 @@ const Dots = styled.div`
   justify-content: center;
 `
 
-const Dot = styled.div`
-  width: 8px;
-  height: 8px;
+const Dot = styled.button`
+  width: 15px;
+  height: 15px;
+  padding: 0;
+  border-color: black;
   border-radius: 50%;
   border-style: solid;
   border-width: 3px;
@@ -115,32 +124,50 @@ const Dot = styled.div`
   `}
 `
 
-const chicagoSites = ["The Art Institute of Chicago", "Millenium Park", "Navy Pier", "Museum of Contemporary Art Chicago"]
-
 const Carousel = () => {
+  const [cityIndex, setCityIndex] = useState(0)
+  const [cityImage, setCityImage] = useState(seattleImage)
+  useEffect(
+    () => {
+      if (cities[cityIndex].name === "Seattle") setCityImage(seattleImage)
+      if (cities[cityIndex].name === "Bay Area") setCityImage(bayAreaImage)
+    }, [cityIndex]
+  )
+
+  const upCityIndex = () => {
+    if (cityIndex === cities.length - 1) setCityIndex(0)
+    else setCityIndex(cityIndex + 1)
+  }
+
+  const downCityIndex = () => {
+    if (cityIndex === 0) setCityIndex(cities.length - 1)
+    else setCityIndex(cityIndex - 1)
+  }
+
   return (
     <Wrapper>
+      <Image image={cityImage} />
       <LocationTitle>
-        <CityTitle>Chicago</CityTitle>
-        <CountryTitle>,USA</CountryTitle>
+        <CityTitle>{cities[cityIndex].name}</CityTitle>
+        <CountryTitle>,</CountryTitle>
+        <CountryTitle>{cities[cityIndex].country}</CountryTitle>
       </LocationTitle>
-      <YearTitle>2021</YearTitle>
+      <YearTitle>{cities[cityIndex].year}</YearTitle>
       <Sites>
-        {chicagoSites.map(site => (
-          <SiteTitle>{site}</SiteTitle>
+        {cities[cityIndex].sites.map((site, index) => (
+          <SiteTitle key={index}>{site}</SiteTitle>
         ))}
       </Sites>
-      <Image />
-      <LeftArrow />
-      <RightArrow />
+      <LeftArrow onClick={() => downCityIndex()} />
+      <RightArrow onClick={() => upCityIndex()} />
       <Dots>
-        <Dot selected/>
-        <Dot />
-        <Dot />
+        {cities.map((city, index) => {
+          if (index === cityIndex) return (<Dot key={index} onClick={() => setCityIndex(index)} selected/>)
+          else return (<Dot onClick={() => setCityIndex(index)} key={index}/>)
+        })}
       </Dots>
     </Wrapper>
   )
 }
 
 export default Carousel
-

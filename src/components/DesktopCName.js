@@ -31,7 +31,7 @@ const Name = styled.div`
 const DesktopCName = () => {
   const names = []
   for (let i = 0; i < 5; i++) {
-    names.push(<Name />)
+    names.push(<Name key={i} />)
   }
   return (
     <Wrapper>
