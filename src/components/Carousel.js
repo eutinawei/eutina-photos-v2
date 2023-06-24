@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
+import { Glitch, GlitchTop, GlitchBottom } from '../utils/Glitch'
 import leftArrow from '../assets/home/left-arrow.png'
 import leftArrowHover from '../assets/home/left-arrow-hover.png'
 import rightArrow from '../assets/home/right-arrow.png'
@@ -10,42 +11,6 @@ import cities from '../constants/cities'
 
 const displacementLength = "-5.5vh"
 const orange = "#E85112"
-
-const Glitch = keyframes`
-  2%,64%{
-    transform: translate(2px,0) skew(0deg);
-  }
-  4%,60%{
-    transform: translate(-2px,0) skew(0deg);
-  }
-  62%{
-    transform: translate(0,0) skew(5deg); 
-  }
-`
-
-const GlitchTop = keyframes`
-  2%,64%{
-    transform: translate(2px,-2px);
-  }
-  4%,60%{
-    transform: translate(-2px,2px);
-  }
-  62%{
-    transform: translate(13px,-1px) skew(-13deg); 
-  }
-`
-
-const GlitchBottom = keyframes`
-  2%,64%{
-    transform: translate(-2px,0);
-  }
-  4%,60%{
-    transform: translate(-2px,0);
-  }
-  62%{
-    transform: translate(-22px,5px) skew(21deg); 
-  }
-`
 
 const Wrapper = styled.div`
   position: absolute;
