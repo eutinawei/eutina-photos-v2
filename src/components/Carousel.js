@@ -30,13 +30,13 @@ const CityTitle = styled.div`
   font-size: 100px;
   font-weight: bold;
   animation: ${Glitch} 1s linear;
-  animation-iteration-count: 1;
+  animation-iteration-count: 2;
   &:before {
     content: '${props => props.name}';
     position: absolute;
     left: 0px;
     animation: ${GlitchTop} 1s linear;
-    animation-iteration-count: 1;
+    animation-iteration-count: 2;
     clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   }
@@ -45,7 +45,7 @@ const CityTitle = styled.div`
     position: absolute;
     left: 0px;
     animation: ${GlitchBottom} 1.5s linear;
-    animation-iteration-count: 1;
+    animation-iteration-count: 2;
     clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
     -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   }
