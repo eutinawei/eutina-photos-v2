@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { Glitch, GlitchTop, GlitchBottom } from '../utils/Glitch'
+import { Glitch, GlitchTop, GlitchBottom, GlitchImage } from '../utils/Glitch'
 import leftArrow from '../assets/home/left-arrow.png'
 import leftArrowHover from '../assets/home/left-arrow-hover.png'
 import rightArrow from '../assets/home/right-arrow.png'
@@ -82,6 +82,7 @@ const SiteTitle = styled.p`
 `
 
 const Image = styled.div`
+  cursor: pointer;
   width: 60vh;
   height: 60vh;
   background: url(${props => props.image}) no-repeat center/cover;
@@ -91,7 +92,19 @@ const Image = styled.div`
   }
 `
 
+const ImageOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  width: 60vh;
+  height: 60vh;
+  background: url(${props => props.image}) no-repeat center/cover;
+  opacity: 0;
+  animation: ${GlitchImage} .2s linear;
+  pointer-events: none;
+`
+
 const Arrow = styled.button`
+  cursor: pointer;
   position: absolute;
   top: calc(30vh - 15px);
   width: 30px;
@@ -125,6 +138,7 @@ const Dots = styled.div`
 `
 
 const Dot = styled.button`
+  cursor: pointer;
   width: 15px;
   height: 15px;
   padding: 0;
@@ -168,6 +182,7 @@ const Carousel = () => {
   return (
     <Wrapper>
       <Image image={cityImage} />
+      <ImageOverlay key={Math.random()} image={cityImage} />
       <LocationTitle>
         <CityTitle key={Math.random()} name={cities[cityIndex].name}>{cities[cityIndex].name}</CityTitle>
         <CountryTitle>,</CountryTitle>
