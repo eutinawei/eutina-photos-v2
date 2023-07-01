@@ -1,23 +1,23 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
-import cname from '../assets/home/cname_vertical.png'
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import cname from "../assets/home/cname_vertical.png";
 
 const MoveUpDown = keyframes`
   to {
     transform: translateY(-50%);
   }
-`
+`;
 
 const Wrapper = styled.div`
   position: absolute;
   margin: 61px 0 0 80px;
   height: calc(100vh - 61px);
   overflow: hidden;
-`
+`;
 
 const Names = styled.div`
   animation: ${MoveUpDown} 30s linear infinite alternate;
-`
+`;
 
 const Name = styled.div`
   width: 110px;
@@ -26,20 +26,18 @@ const Name = styled.div`
   &:not(:last-child) {
     margin-bottom: 50px;
   }
-`
+`;
 
 const DesktopCName = () => {
-  const names = []
+  const names = [];
   for (let i = 0; i < 5; i++) {
-    names.push(<Name key={i} />)
+    names.push(<Name key={i} />);
   }
   return (
     <Wrapper>
-      <Names>
-        {names}
-      </Names>
+      <Names>{names}</Names>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default DesktopCName
+export default DesktopCName;

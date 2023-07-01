@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components'
+import { keyframes } from "styled-components";
 
 export const Glitch = keyframes`
   2%,64%{
@@ -10,7 +10,7 @@ export const Glitch = keyframes`
   62%{
     transform: translate(0,0) skew(5deg); 
   }
-`
+`;
 
 export const GlitchTop = keyframes`
   2%,64%{
@@ -22,7 +22,7 @@ export const GlitchTop = keyframes`
   62%{
     transform: translate(13px,-1px) skew(-13deg); 
   }
-`
+`;
 
 export const GlitchBottom = keyframes`
   2%,64%{
@@ -34,7 +34,7 @@ export const GlitchBottom = keyframes`
   62%{
     transform: translate(-22px,5px) skew(21deg); 
   }
-`
+`;
 
 export const GlitchImage = keyframes`
   0%{
@@ -77,4 +77,4 @@ export const GlitchImage = keyframes`
 	  background-position: 0 0;
 	  filter:hue-rotate(360deg);
 	}
-`
+`;

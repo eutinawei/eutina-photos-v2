@@ -1,12 +1,12 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
-import ename from '../assets/home/ename_vertical.png'
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import ename from "../assets/home/ename_vertical.png";
 
 const MoveUpDown = keyframes`
   to {
     transform: translateY(-50%);
   }
-`
+`;
 
 const Wrapper = styled.div`
   position: absolute;
@@ -14,11 +14,11 @@ const Wrapper = styled.div`
   margin: 61px 30px 0 0;
   height: calc(100vh - 61px);
   overflow: hidden;
-`
+`;
 
 const Names = styled.div`
   animation: ${MoveUpDown} 60s linear infinite alternate;
-`
+`;
 
 const Name = styled.div`
   width: 110px;
@@ -27,20 +27,18 @@ const Name = styled.div`
   &:not(:last-child) {
     margin-bottom: 70px;
   }
-`
+`;
 
 const DesktopEName = () => {
-  const names = []
+  const names = [];
   for (let i = 0; i < 5; i++) {
-    names.push(<Name key={i} />)
+    names.push(<Name key={i} />);
   }
   return (
     <Wrapper>
-      <Names>
-        {names}
-      </Names>
+      <Names>{names}</Names>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default DesktopEName
+export default DesktopEName;

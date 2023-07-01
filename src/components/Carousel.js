@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { Glitch, GlitchTop, GlitchBottom, GlitchImage } from '../utils/Glitch'
-import leftArrow from '../assets/home/left-arrow.png'
-import leftArrowHover from '../assets/home/left-arrow-hover.png'
-import rightArrow from '../assets/home/right-arrow.png'
-import rightArrowHover from '../assets/home/right-arrow-hover.png'
-import seattleImage from '../assets/home/seattle.jpg'
-import bayAreaImage from '../assets/home/bayarea.jpg'
-import cities from '../constants/cities'
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { Glitch, GlitchTop, GlitchBottom, GlitchImage } from "../utils/Glitch";
+import leftArrow from "../assets/home/left-arrow.png";
+import leftArrowHover from "../assets/home/left-arrow-hover.png";
+import rightArrow from "../assets/home/right-arrow.png";
+import rightArrowHover from "../assets/home/right-arrow-hover.png";
+import seattleImage from "../assets/home/seattle.jpg";
+import bayAreaImage from "../assets/home/bayarea.jpg";
+import cities from "../constants/cities";
 
-const displacementLength = "-5.5vh"
-const orange = "#E85112"
+const displacementLength = "-5.5vh";
+const orange = "#E85112";
 
 const Wrapper = styled.div`
   position: absolute;
   left: calc(50vw - 30vh);
   top: 20vh;
-`
+`;
 
 const LocationTitle = styled.div`
   position: absolute;
@@ -24,7 +24,7 @@ const LocationTitle = styled.div`
   left: ${displacementLength};
   display: flex;
   flex-direction: row;
-`
+`;
 
 const CityTitle = styled.div`
   font-size: 100px;
@@ -32,7 +32,7 @@ const CityTitle = styled.div`
   animation: ${Glitch} 1s linear;
   animation-iteration-count: 2;
   &:before {
-    content: '${props => props.name}';
+    content: "${(props) => props.name}";
     position: absolute;
     left: 0px;
     animation: ${GlitchTop} 1s linear;
@@ -41,7 +41,7 @@ const CityTitle = styled.div`
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
   }
   &:after {
-    content: '${props => props.name}';
+    content: "${(props) => props.name}";
     position: absolute;
     left: 0px;
     animation: ${GlitchBottom} 1.5s linear;
@@ -49,13 +49,13 @@ const CityTitle = styled.div`
     clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
     -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   }
-`
+`;
 
 const CountryTitle = styled.div`
   font-size: 50px;
   font-weight: 600;
   margin-top: 3vh;
-`
+`;
 
 const YearTitle = styled.div`
   position: absolute;
@@ -65,13 +65,13 @@ const YearTitle = styled.div`
   font-weight: bold;
   color: transparent;
   -webkit-text-stroke: 3px ${orange};
-`
+`;
 
 const Sites = styled.div`
   position: absolute;
   left: ${displacementLength};
   bottom: 1vh;
-`
+`;
 
 const SiteTitle = styled.p`
   font-size: 18px;
@@ -79,29 +79,29 @@ const SiteTitle = styled.p`
   background-color: white;
   margin: 5px;
   display: table;
-`
+`;
 
 const Image = styled.div`
   cursor: pointer;
   width: 60vh;
   height: 60vh;
-  background: url(${props => props.image}) no-repeat center/cover;
+  background: url(${(props) => props.image}) no-repeat center/cover;
   filter: grayscale(1);
   &:hover {
     filter: grayscale(0);
   }
-`
+`;
 
 const ImageOverlay = styled.div`
   position: absolute;
   top: 0;
   width: 60vh;
   height: 60vh;
-  background: url(${props => props.image}) no-repeat center/cover;
+  background: url(${(props) => props.image}) no-repeat center/cover;
   opacity: 0;
-  animation: ${GlitchImage} .2s linear;
+  animation: ${GlitchImage} 0.2s linear;
   pointer-events: none;
-`
+`;
 
 const Arrow = styled.button`
   cursor: pointer;
@@ -110,7 +110,7 @@ const Arrow = styled.button`
   width: 30px;
   height: 30px;
   border: none;
-`
+`;
 
 const LeftArrow = styled(Arrow)`
   left: ${displacementLength};
@@ -118,7 +118,7 @@ const LeftArrow = styled(Arrow)`
   &:hover {
     background: url(${leftArrowHover}) no-repeat center/cover;
   }
-`
+`;
 
 const RightArrow = styled(Arrow)`
   right: ${displacementLength};
@@ -126,7 +126,7 @@ const RightArrow = styled(Arrow)`
   &:hover {
     background: url(${rightArrowHover}) no-repeat center/cover;
   }
-`
+`;
 
 const Dots = styled.div`
   position: absolute;
@@ -135,7 +135,7 @@ const Dots = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-`
+`;
 
 const Dot = styled.button`
   cursor: pointer;
@@ -153,38 +153,39 @@ const Dot = styled.button`
     border-color: ${orange};
     background-color: ${orange};
   }
-  ${props => props.selected
-    && `
+  ${(props) =>
+    props.selected &&
+    `
       background-color: black;
   `}
-`
+`;
 
 const Carousel = () => {
-  const [cityIndex, setCityIndex] = useState(0)
-  const [cityImage, setCityImage] = useState(seattleImage)
-  useEffect(
-    () => {
-      if (cities[cityIndex].name === "Seattle") setCityImage(seattleImage)
-      if (cities[cityIndex].name === "Bay Area") setCityImage(bayAreaImage)
-    }, [cityIndex]
-  )
+  const [cityIndex, setCityIndex] = useState(0);
+  const [cityImage, setCityImage] = useState(seattleImage);
+  useEffect(() => {
+    if (cities[cityIndex].name === "Seattle") setCityImage(seattleImage);
+    if (cities[cityIndex].name === "Bay Area") setCityImage(bayAreaImage);
+  }, [cityIndex]);
 
   const upCityIndex = () => {
-    if (cityIndex === cities.length - 1) setCityIndex(0)
-    else setCityIndex(cityIndex + 1)
-  }
+    if (cityIndex === cities.length - 1) setCityIndex(0);
+    else setCityIndex(cityIndex + 1);
+  };
 
   const downCityIndex = () => {
-    if (cityIndex === 0) setCityIndex(cities.length - 1)
-    else setCityIndex(cityIndex - 1)
-  }
+    if (cityIndex === 0) setCityIndex(cities.length - 1);
+    else setCityIndex(cityIndex - 1);
+  };
 
   return (
     <Wrapper>
       <Image image={cityImage} />
       <ImageOverlay key={Math.random()} image={cityImage} />
       <LocationTitle>
-        <CityTitle key={Math.random()} name={cities[cityIndex].name}>{cities[cityIndex].name}</CityTitle>
+        <CityTitle key={Math.random()} name={cities[cityIndex].name}>
+          {cities[cityIndex].name}
+        </CityTitle>
         <CountryTitle>,</CountryTitle>
         <CountryTitle>{cities[cityIndex].country}</CountryTitle>
       </LocationTitle>
@@ -198,12 +199,15 @@ const Carousel = () => {
       <RightArrow onClick={() => upCityIndex()} />
       <Dots>
         {cities.map((city, index) => {
-          if (index === cityIndex) return (<Dot key={index} onClick={() => setCityIndex(index)} selected/>)
-          else return (<Dot onClick={() => setCityIndex(index)} key={index}/>)
+          if (index === cityIndex)
+            return (
+              <Dot key={index} onClick={() => setCityIndex(index)} selected />
+            );
+          else return <Dot onClick={() => setCityIndex(index)} key={index} />;
         })}
       </Dots>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Carousel
+export default Carousel;
