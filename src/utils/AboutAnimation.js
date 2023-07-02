@@ -187,3 +187,12 @@ export const SmallBlueAnimation = keyframes`
     transform: rotate(0deg);
   }
 `;
+
+export const BlueBoxAnimation = keyframes`
+  0%{
+    width: 0;
+  }
+  100%{
+    width: calc(55vw + 180px);
+  }
+`;

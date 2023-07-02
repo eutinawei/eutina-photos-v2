@@ -8,10 +8,8 @@ import {
   LargeOrangeAnimation,
   MidOrangeAnimation,
   SmallOrangeAnimation,
-  LargeBlueAnimation,
-  MidBlueAnimation,
-  SmallBlueAnimation,
-} from "./utils/CircleAnimation";
+  BlueBoxAnimation,
+} from "./utils/AboutAnimation";
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -23,7 +21,7 @@ const TextWrapper = styled.div`
   position: absolute;
   top: 120px;
   left: 120px;
-  width: 60vw;
+  width: 55vw;
   height: 70vh;
   overflow: scroll;
 `;
@@ -31,8 +29,10 @@ const TextWrapper = styled.div`
 const Text = styled.div`
   line-height: 40px;
   white-space: pre-wrap;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 18px;
+  color: white;
+  font-family: "Nunito";
 `;
 
 const Photo = styled.img.attrs({
@@ -65,31 +65,20 @@ const SmallOrange = styled(OrangeCircle)`
   animation: ${SmallOrangeAnimation} 10s ease-in-out infinite;
 `;
 
-const BlueSquare = styled.div`
-  position: fixed;
+const BlueBox = styled.div`
+  position: absolute;
   background-color: #334595;
-  transition-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1);
-`;
-
-const LargeBlue = styled(BlueSquare)`
-  animation: ${LargeBlueAnimation} 10s ease-in-out infinite;
-`;
-
-const MidBlue = styled(BlueSquare)`
-  animation: ${MidBlueAnimation} 10s ease-in-out infinite;
-`;
-
-const SmallBlue = styled(BlueSquare)`
-  animation: ${SmallBlueAnimation} 10s ease-in-out infinite;
+  height: calc(70vh + 40px);
+  top: 100px;
+  border-radius: 0 50px 50px 0;
+  animation: ${BlueBoxAnimation} 1s ease-in-out forwards;
 `;
 
 const About = () => {
   return (
     <Wrapper>
+      <BlueBox />
       <DesktopHeader />
-      <LargeBlue />
-      <MidBlue />
-      <SmallBlue />
       <TextWrapper>
         <Text>{text}</Text>
       </TextWrapper>
