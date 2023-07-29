@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import DesktopHeader from "./components/DesktopHeader";
-import paper from "./assets/home/paper.jpg";
 import text from "./constants/aboutText";
 import eutina from "./assets/about/eutina.png";
 import {
@@ -10,12 +8,6 @@ import {
   SmallOrangeAnimation,
   BlueBoxAnimation,
 } from "./utils/AboutAnimation";
-
-const Wrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: url(${paper}) no-repeat center/cover;
-`;
 
 const TextWrapper = styled.div`
   position: absolute;
@@ -66,6 +58,7 @@ const SmallOrange = styled(OrangeCircle)`
 `;
 
 const BlueBox = styled.div`
+  z-index: -1;
   position: absolute;
   background-color: #334595;
   height: calc(70vh + 40px);
@@ -76,9 +69,8 @@ const BlueBox = styled.div`
 
 const About = () => {
   return (
-    <Wrapper>
+    <>
       <BlueBox />
-      <DesktopHeader />
       <TextWrapper>
         <Text>{text}</Text>
       </TextWrapper>
@@ -86,7 +78,7 @@ const About = () => {
       <MidOrange />
       <SmallOrange />
       <Photo />
-    </Wrapper>
+    </>
   );
 };
 
