@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import DesktopThoughtsTitle from "./components/DesktopThoughtsTitle";
 import articles from "./constants/thoughts";
+import MobileThoughtsTitle from "./components/MobileThoughtsTitle";
 
 const orange = "#E85112";
 
@@ -71,9 +72,10 @@ const Thoughts = () => {
   return (
     <>
       <DesktopThoughtsTitle />
+      <MobileThoughtsTitle />
       <Articles>
         {articles.map((article) => (
-          <>
+          <React.Fragment key={article.title}>
             <ArticleWrapper>
               <ArticleImage
                 src={require("./assets/thoughts/" + article.image + ".jpg")}
@@ -85,7 +87,7 @@ const Thoughts = () => {
               </ArticleTextWrapper>
             </ArticleWrapper>
             <Line />
-          </>
+          </React.Fragment>
         ))}
       </Articles>
     </>

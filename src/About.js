@@ -12,10 +12,10 @@ import {
 
 const TextWrapper = styled.div`
   position: absolute;
-  top: 120px;
+  top: 140px;
   left: 120px;
   width: 55vw;
-  height: 70vh;
+  height: 65vh;
   overflow: scroll;
 `;
 

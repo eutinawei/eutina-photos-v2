@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { forMobile } from "../constants/breakpoints";
 import titleImage from "../assets/thoughts/title_vertical.png";
 
 const MoveUpDown = keyframes`
@@ -13,6 +14,9 @@ const Wrapper = styled.div`
   margin: 61px 0 0 150px;
   height: calc(100vh - 61px);
   overflow: hidden;
+  ${forMobile} {
+    display: none;
+  }
 `;
 
 const Titles = styled.div`

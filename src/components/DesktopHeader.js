@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { forMobile } from "../constants/breakpoints";
 import homeIcon from "../assets/home/home.png";
 import homeIconHover from "../assets/home/home-hover.png";
 import youtubeIcon from "../assets/home/youtube.png";
@@ -7,7 +8,11 @@ import youtubeIconHover from "../assets/home/youtube-hover.png";
 
 const orange = "#E85112";
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  ${forMobile} {
+    display: none;
+  }
+`;
 
 const HorizontalLine = styled.div`
   position: absolute;

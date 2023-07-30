@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import { forDesktop, forMobile } from "../constants/breakpoints";
 import { Glitch, GlitchTop, GlitchBottom, GlitchImage } from "../utils/Glitch";
 import leftArrow from "../assets/home/left-arrow.png";
 import leftArrowHover from "../assets/home/left-arrow-hover.png";
@@ -16,6 +17,10 @@ const Wrapper = styled.div`
   position: absolute;
   left: calc(50vw - 30vh);
   top: 20vh;
+  ${forMobile} {
+    left: calc(50vw - 15vh);
+    top: 23vh;
+  }
 `;
 
 const LocationTitle = styled.div`
@@ -24,6 +29,9 @@ const LocationTitle = styled.div`
   left: ${displacementLength};
   display: flex;
   flex-direction: row;
+  ${forMobile} {
+    top: -6.5vh;
+  }
 `;
 
 const CityTitle = styled.div`
@@ -49,12 +57,19 @@ const CityTitle = styled.div`
     clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
     -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   }
+  ${forMobile} {
+    font-size: 50px;
+  }
 `;
 
 const CountryTitle = styled.div`
   font-size: 50px;
   font-weight: 600;
   margin-top: 3vh;
+  ${forMobile} {
+    font-size: 25px;
+    margin-top: 3vh;
+  }
 `;
 
 const YearTitle = styled.div`
@@ -65,6 +80,11 @@ const YearTitle = styled.div`
   font-weight: bold;
   color: transparent;
   -webkit-text-stroke: 3px ${orange};
+  ${forMobile} {
+    font-size: 25px;
+    -webkit-text-stroke: 2px ${orange};
+    top: -3.5vh;
+  }
 `;
 
 const Sites = styled.div`
@@ -79,6 +99,9 @@ const SiteTitle = styled.p`
   background-color: white;
   margin: 5px;
   display: table;
+  ${forMobile} {
+    font-size: 12px;
+  }
 `;
 
 const Image = styled.div`
@@ -87,8 +110,13 @@ const Image = styled.div`
   height: 60vh;
   background: url(${(props) => props.image}) no-repeat center/cover;
   filter: grayscale(1);
-  &:hover {
-    filter: grayscale(0);
+  ${forDesktop} {
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+  ${forMobile} {
+    width: 30vh;
   }
 `;
 
@@ -101,6 +129,9 @@ const ImageOverlay = styled.div`
   opacity: 0;
   animation: ${GlitchImage} 0.2s linear;
   pointer-events: none;
+  ${forMobile} {
+    width: 30vh;
+  }
 `;
 
 const Arrow = styled.button`
@@ -110,21 +141,30 @@ const Arrow = styled.button`
   width: 30px;
   height: 30px;
   border: none;
+  ${forMobile} {
+    top: calc(30vh - 10px);
+    width: 20px;
+    height: 20px;
+  }
 `;
 
 const LeftArrow = styled(Arrow)`
   left: ${displacementLength};
   background: url(${leftArrow}) no-repeat center/cover;
-  &:hover {
-    background: url(${leftArrowHover}) no-repeat center/cover;
+  ${forDesktop} {
+    &:hover {
+      background: url(${leftArrowHover}) no-repeat center/cover;
+    }
   }
 `;
 
 const RightArrow = styled(Arrow)`
   right: ${displacementLength};
   background: url(${rightArrow}) no-repeat center/cover;
-  &:hover {
-    background: url(${rightArrowHover}) no-repeat center/cover;
+  ${forDesktop} {
+    &:hover {
+      background: url(${rightArrowHover}) no-repeat center/cover;
+    }
   }
 `;
 
@@ -135,6 +175,10 @@ const Dots = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  ${forMobile} {
+    width: 30vh;
+    bottom: -40px;
+  }
 `;
 
 const Dot = styled.button`
@@ -149,15 +193,22 @@ const Dot = styled.button`
   &:not(:last-child) {
     margin-right: 10px;
   }
-  &:hover {
-    border-color: ${orange};
-    background-color: ${orange};
+  ${forDesktop} {
+    &:hover {
+      border-color: ${orange};
+      background-color: ${orange};
+    }
   }
   ${(props) =>
     props.selected &&
     `
       background-color: black;
   `}
+  ${forMobile} {
+    width: 12px;
+    height: 12px;
+    border-width: 3px;
+  }
 `;
 
 const Carousel = () => {

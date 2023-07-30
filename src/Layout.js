@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Outlet } from "react-router-dom";
 import DesktopHeader from "./components/DesktopHeader";
+import MobileHeader from "./components/MobileHeader";
 import paper from "./assets/home/paper.jpg";
 
 const Wrapper = styled.div`
@@ -20,6 +21,7 @@ const Background = styled.div`
 const Layout = () => (
   <Wrapper>
     <DesktopHeader />
+    <MobileHeader />
     <Background />
     <main>
       <Outlet />

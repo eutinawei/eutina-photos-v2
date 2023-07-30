@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { forMobile } from "../constants/breakpoints";
 import ename from "../assets/home/ename_vertical.png";
 
 const MoveUpDown = keyframes`
@@ -14,6 +15,9 @@ const Wrapper = styled.div`
   margin: 61px 30px 0 0;
   height: calc(100vh - 61px);
   overflow: hidden;
+  ${forMobile} {
+    display: none;
+  }
 `;
 
 const Names = styled.div`
