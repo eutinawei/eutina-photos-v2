@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import text from "./constants/aboutText";
 import eutina from "./assets/about/eutina.png";
+import names from "./assets/about/names.png";
 import {
   LargeOrangeAnimation,
   MidOrangeAnimation,
@@ -36,6 +37,16 @@ const Photo = styled.img.attrs({
   max-width: 30vw;
   max-height: 60vh;
   width: auto;
+  height: auto;
+`;
+
+const Names = styled.img.attrs({
+  src: `${names}`,
+})`
+  position: absolute;
+  bottom: 0px;
+  left: 61px;
+  width: 55vw;
   height: auto;
 `;
 
@@ -78,6 +89,7 @@ const About = () => {
       <MidOrange />
       <SmallOrange />
       <Photo />
+      <Names />
     </>
   );
 };

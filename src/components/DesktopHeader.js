@@ -78,7 +78,9 @@ const DesktopHeader = () => {
       <Options>
         <HomeIcon onClick={() => window.location.assign("/")} />
         <OptionDivider />
-        <TextIcon>thoughts</TextIcon>
+        <TextIcon onClick={() => window.location.assign("/thoughts")}>
+          thoughts
+        </TextIcon>
         <OptionDivider />
         <TextIcon onClick={() => window.location.assign("/about")}>
           about
