@@ -7,7 +7,11 @@ import leftArrowHover from "../assets/home/left-arrow-hover.png";
 import rightArrow from "../assets/home/right-arrow.png";
 import rightArrowHover from "../assets/home/right-arrow-hover.png";
 import seattleImage from "../assets/home/seattle.jpg";
+import helenaImage from "../assets/home/helena.jpg";
 import bayAreaImage from "../assets/home/bayarea.jpg";
+import bostonImage from "../assets/home/boston.jpg";
+import chicagoImage from "../assets/home/chicago.jpg";
+import dcImage from "../assets/home/dc.jpg";
 import cities from "../constants/cities";
 
 const displacementLength = "-5.5vh";
@@ -118,6 +122,8 @@ const Image = styled.div`
   ${forMobile} {
     width: 30vh;
   }
+  background-position: ${(props) =>
+    props.city === "Chicago" ? "bottom" : "center"};
 `;
 
 const ImageOverlay = styled.div`
@@ -216,7 +222,11 @@ const Carousel = () => {
   const [cityImage, setCityImage] = useState(seattleImage);
   useEffect(() => {
     if (cities[cityIndex].name === "Seattle") setCityImage(seattleImage);
+    if (cities[cityIndex].name === "Helena") setCityImage(helenaImage);
     if (cities[cityIndex].name === "Bay Area") setCityImage(bayAreaImage);
+    if (cities[cityIndex].name === "Boston") setCityImage(bostonImage);
+    if (cities[cityIndex].name === "Chicago") setCityImage(chicagoImage);
+    if (cities[cityIndex].name === "DC") setCityImage(dcImage);
   }, [cityIndex]);
 
   const upCityIndex = () => {
@@ -231,7 +241,7 @@ const Carousel = () => {
 
   return (
     <Wrapper>
-      <Image image={cityImage} />
+      <Image image={cityImage} city={cities[cityIndex].name} />
       <ImageOverlay key={Math.random()} image={cityImage} />
       <LocationTitle>
         <CityTitle key={Math.random()} name={cities[cityIndex].name}>
