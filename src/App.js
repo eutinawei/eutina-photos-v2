@@ -4,6 +4,7 @@ import Layout from "./Layout";
 import Home from "./Home";
 import About from "./About";
 import Thoughts from "./Thoughts";
+import Thought from "./Thought";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -21,6 +22,10 @@ const App = () => {
         {
           path: "/thoughts",
           element: <Thoughts />,
+        },
+        {
+          path: "/thought/:key",
+          element: <Thought />,
         },
       ],
     },

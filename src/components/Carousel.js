@@ -25,12 +25,12 @@ const Wrapper = styled.div`
 
 const LocationTitle = styled.div`
   position: absolute;
-  top: -7vh;
+  top: -90px;
   left: ${displacementLength};
   display: flex;
   flex-direction: row;
   ${forMobile} {
-    top: -6.5vh;
+    top: -45px;
   }
 `;
 
@@ -65,16 +65,16 @@ const CityTitle = styled.div`
 const CountryTitle = styled.div`
   font-size: 50px;
   font-weight: 600;
-  margin-top: 3vh;
+  margin-top: 35px;
   ${forMobile} {
     font-size: 25px;
-    margin-top: 3vh;
+    margin-top: 17px;
   }
 `;
 
 const YearTitle = styled.div`
   position: absolute;
-  top: -4vh;
+  top: -50px;
   right: ${displacementLength};
   font-size: 45px;
   font-weight: bold;
@@ -83,14 +83,14 @@ const YearTitle = styled.div`
   ${forMobile} {
     font-size: 25px;
     -webkit-text-stroke: 2px ${orange};
-    top: -3.5vh;
+    top: -30px;
   }
 `;
 
 const Sites = styled.div`
   position: absolute;
   left: ${displacementLength};
-  bottom: 1vh;
+  bottom: 20px;
 `;
 
 const SiteTitle = styled.p`

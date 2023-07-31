@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { forMobile } from "./constants/breakpoints";
 import text from "./constants/aboutText";
 import eutina from "./assets/about/eutina.png";
 import names from "./assets/about/names.png";
@@ -7,7 +8,8 @@ import {
   LargeOrangeAnimation,
   MidOrangeAnimation,
   SmallOrangeAnimation,
-  BlueBoxAnimation,
+  DesktopBlueBoxAnimation,
+  MobileBlueBoxAnimation,
 } from "./utils/AboutAnimation";
 
 const TextWrapper = styled.div`
@@ -17,6 +19,11 @@ const TextWrapper = styled.div`
   width: 55vw;
   height: 65vh;
   overflow: scroll;
+  ${forMobile} {
+    left: 40px;
+    width: calc(90vw - 80px);
+    height: calc(80vh - 80px);
+  }
 `;
 
 const Text = styled.div`
@@ -26,6 +33,10 @@ const Text = styled.div`
   font-size: 18px;
   color: white;
   font-family: "Nunito";
+  ${forMobile} {
+    line-height: 30px;
+    font-size: 16px;
+  }
 `;
 
 const Photo = styled.img.attrs({
@@ -38,6 +49,10 @@ const Photo = styled.img.attrs({
   max-height: 60vh;
   width: auto;
   height: auto;
+  ${forMobile} {
+    max-width: 45vw;
+    max-height: 60vh;
+  }
 `;
 
 const Names = styled.img.attrs({
@@ -48,6 +63,9 @@ const Names = styled.img.attrs({
   left: 61px;
   width: 55vw;
   height: auto;
+  ${forMobile} {
+    display: none;
+  }
 `;
 
 const OrangeCircle = styled.div`
@@ -58,14 +76,23 @@ const OrangeCircle = styled.div`
 
 const LargeOrange = styled(OrangeCircle)`
   animation: ${LargeOrangeAnimation} 10s ease-in-out infinite;
+  ${forMobile} {
+    display: none;
+  }
 `;
 
 const MidOrange = styled(OrangeCircle)`
   animation: ${MidOrangeAnimation} 10s ease-in-out infinite;
+  ${forMobile} {
+    display: none;
+  }
 `;
 
 const SmallOrange = styled(OrangeCircle)`
   animation: ${SmallOrangeAnimation} 10s ease-in-out infinite;
+  ${forMobile} {
+    display: none;
+  }
 `;
 
 const BlueBox = styled.div`
@@ -75,20 +102,24 @@ const BlueBox = styled.div`
   height: calc(70vh + 40px);
   top: 100px;
   border-radius: 0 50px 50px 0;
-  animation: ${BlueBoxAnimation} 1s ease-in-out forwards;
+  animation: ${DesktopBlueBoxAnimation} 1s ease-in-out forwards;
+  ${forMobile} {
+    height: 80vh;
+    animation: ${MobileBlueBoxAnimation} 1s ease-in-out forwards;
+  }
 `;
 
 const About = () => {
   return (
     <>
-      <BlueBox />
-      <TextWrapper>
-        <Text>{text}</Text>
-      </TextWrapper>
       <LargeOrange />
       <MidOrange />
       <SmallOrange />
       <Photo />
+      <BlueBox />
+      <TextWrapper>
+        <Text>{text}</Text>
+      </TextWrapper>
       <Names />
     </>
   );

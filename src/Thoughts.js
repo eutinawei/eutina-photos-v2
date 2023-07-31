@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { forDesktop, forMobile } from "./constants/breakpoints";
 import DesktopThoughtsTitle from "./components/DesktopThoughtsTitle";
 import articles from "./constants/thoughts";
 import MobileThoughtsTitle from "./components/MobileThoughtsTitle";
@@ -13,16 +14,29 @@ const Articles = styled.div`
   height: calc(100vh - 180px);
   width: calc(100vw - 450px);
   overflow: scroll;
+  ${forMobile} {
+    left: 50px;
+    top: 200px;
+    height: calc(100vh - 230px);
+    width: calc(100vw - 100px);
+  }
 `;
 
-const ArticleWrapper = styled.div`
+const ArticleWrapper = styled.a`
+  all: unset;
   display: flex;
   flex-direction: row;
   align-items: center;
   margin-bottom: 80px;
-  &:hover {
-    cursor: pointer;
-    color: ${orange};
+  ${forDesktop} {
+    &:hover {
+      cursor: pointer;
+      color: ${orange};
+    }
+  }
+  ${forMobile} {
+    flex-direction: column;
+    margin-bottom: 60px;
   }
 `;
 
@@ -32,7 +46,10 @@ const ArticleImage = styled.img`
   height: 200px;
   border-radius: 10px;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16);
-  margin-right: 60px;
+  margin: 0 60px 0 0;
+  ${forMobile} {
+    margin: 0 0 40px 0;
+  }
 `;
 
 const ArticleTextWrapper = styled.div`
@@ -44,11 +61,17 @@ const ArticleTitle = styled.div`
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 3px;
+  ${forMobile} {
+    font-size: 25px;
+  }
 `;
 
 const ArticleDate = styled.div`
   font-size: 16px;
   margin-bottom: 15px;
+  ${forMobile} {
+    font-size: 14px;
+  }
 `;
 
 const ArticleText = styled.div`
@@ -60,12 +83,18 @@ const ArticleText = styled.div`
   line-clamp: 3;
   -webkit-box-orient: vertical;
   line-height: 25px;
+  ${forMobile} {
+    font-size: 14px;
+  }
 `;
 
 const Line = styled.hr`
   border-top: 1px solid;
   opacity: 30%;
   margin-bottom: 80px;
+  ${forMobile} {
+    margin-bottom: 60px;
+  }
 `;
 
 const Thoughts = () => {
@@ -76,7 +105,9 @@ const Thoughts = () => {
       <Articles>
         {articles.map((article) => (
           <React.Fragment key={article.title}>
-            <ArticleWrapper>
+            <ArticleWrapper
+              href={`${process.env.PUBLIC_URL}/thought/${article.key}`}
+            >
               <ArticleImage
                 src={require("./assets/thoughts/" + article.image + ".jpg")}
               />

@@ -188,11 +188,20 @@ export const SmallBlueAnimation = keyframes`
   }
 `;
 
-export const BlueBoxAnimation = keyframes`
+export const DesktopBlueBoxAnimation = keyframes`
   0%{
     width: 0;
   }
   100%{
     width: calc(55vw + 180px);
+  }
+`;
+
+export const MobileBlueBoxAnimation = keyframes`
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 90vw;
   }
 `;
