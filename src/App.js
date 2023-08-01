@@ -5,6 +5,7 @@ import Home from "./Home";
 import About from "./About";
 import Thoughts from "./Thoughts";
 import Thought from "./Thought";
+import Photos from "./Photos";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const App = () => {
         {
           path: "/thought/:key",
           element: <Thought />,
+        },
+        {
+          path: "/photos/:key",
+          element: <Photos />,
         },
       ],
     },
