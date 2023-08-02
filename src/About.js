@@ -19,6 +19,7 @@ const TextWrapper = styled.div`
   width: 55vw;
   height: 65vh;
   overflow: scroll;
+  scrollbar-width: none;
   ${forMobile} {
     left: 40px;
     width: calc(90vw - 80px);

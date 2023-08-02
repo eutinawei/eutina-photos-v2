@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   width: calc(100vw - 180px);
   height: calc(100vh - 180px);
   overflow: scroll;
+  scrollbar-width: none;
   ${forMobile} {
     top: 100px;
     left: 40px;

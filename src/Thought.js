@@ -31,6 +31,7 @@ const Image = styled.img`
 const TextWrapper = styled.div`
   height: calc(70vh - 230px);
   overflow: scroll;
+  scrollbar-width: none;
   ${forMobile} {
     height: calc(70vh - 150px);
     height: calc(70dvh - 150px);

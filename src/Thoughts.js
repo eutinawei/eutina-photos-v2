@@ -14,6 +14,7 @@ const Articles = styled.div`
   height: calc(100vh - 180px);
   width: calc(100vw - 450px);
   overflow: scroll;
+  scrollbar-width: none;
   ${forMobile} {
     left: 50px;
     top: 200px;
