@@ -13,7 +13,7 @@ import chicagoImage from "../assets/home/chicago.jpg";
 import dcImage from "../assets/home/dc.jpg";
 import cities from "../constants/cities";
 
-const displacementLength = "-5.5vh";
+const displacementLength = "-60px";
 const orange = "#E85112";
 
 const Wrapper = styled.div`

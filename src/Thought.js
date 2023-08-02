@@ -6,7 +6,7 @@ import { forMobile } from "./constants/breakpoints";
 
 const Wrapper = styled.div`
   position: absolute;
-  top: 120px;
+  top: 100px;
   left: 120px;
   width: calc(100vw - 180px);
   ${forMobile} {
@@ -20,16 +20,16 @@ const Image = styled.img`
   height: 30vh;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 70px;
+  margin-bottom: 60px;
   ${forMobile} {
     width: calc(100vw - 120px);
     height: 20vh;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 `;
 
 const TextWrapper = styled.div`
-  height: calc(70vh - 250px);
+  height: calc(70vh - 230px);
   overflow: scroll;
   ${forMobile} {
     height: calc(70vh - 150px);
