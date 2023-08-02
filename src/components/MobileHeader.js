@@ -32,6 +32,7 @@ const MobileListWrapper = styled.div`
   position: absolute;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background-color: #e85112;
   display: ${(props) => props.display};
   transition: 0.3s;

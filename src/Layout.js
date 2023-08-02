@@ -8,6 +8,7 @@ import paper from "./assets/home/paper.jpg";
 const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
 `;
 
 const Background = styled.div`
@@ -15,6 +16,7 @@ const Background = styled.div`
   z-index: -5;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background: url(${paper}) no-repeat center/cover;
 `;
 

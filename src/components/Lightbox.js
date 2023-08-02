@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   left: 0;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,6 +28,7 @@ const Background = styled.button`
   position: absolute;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   background: rgba(255, 255, 255, 0.7);
   animation: ${fadeIn} 0.5s;
   border: 0;

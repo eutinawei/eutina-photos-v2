@@ -32,7 +32,8 @@ const TextWrapper = styled.div`
   height: calc(70vh - 250px);
   overflow: scroll;
   ${forMobile} {
-    height: calc(70vh - 120px);
+    height: calc(70vh - 150px);
+    height: calc(70dvh - 150px);
   }
 `;
 
@@ -44,9 +45,9 @@ const Title = styled.div`
 const Date = styled.div`
   padding-top: 50px;
   text-align: right;
-  font-family: "Nunito";
   ${forMobile} {
     padding-top: 20px;
+    font-size: 14px;
   }
 `;
 
@@ -54,9 +55,9 @@ const Text = styled.div`
   padding-top: 30px;
   line-height: 25px;
   white-space: pre-wrap;
-  font-family: "Nunito";
   ${forMobile} {
     padding-top: 20px;
+    font-size: 14px;
   }
 `;
 

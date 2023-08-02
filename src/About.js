@@ -22,17 +22,17 @@ const TextWrapper = styled.div`
   ${forMobile} {
     left: 40px;
     width: calc(90vw - 80px);
-    height: calc(80vh - 80px);
+    height: calc(70vh - 80px);
+    height: calc(70dvh - 80px);
   }
 `;
 
 const Text = styled.div`
   line-height: 40px;
   white-space: pre-wrap;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 18px;
   color: white;
-  font-family: "Nunito";
   ${forMobile} {
     line-height: 30px;
     font-size: 16px;
@@ -104,7 +104,8 @@ const BlueBox = styled.div`
   border-radius: 0 50px 50px 0;
   animation: ${DesktopBlueBoxAnimation} 1s ease-in-out forwards;
   ${forMobile} {
-    height: 80vh;
+    height: 70vh;
+    height: 70dvh;
     animation: ${MobileBlueBoxAnimation} 1s ease-in-out forwards;
   }
 `;

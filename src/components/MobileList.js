@@ -47,7 +47,7 @@ const PlainText = styled.div`
 const OutlineText = styled(PlainText)`
   font-weight: 900;
   color: transparent;
-  -webkit-text-stroke: 1px white;
+  -webkit-text-stroke: 2px white;
 `;
 
 const BackgroundText = styled(PlainText)`

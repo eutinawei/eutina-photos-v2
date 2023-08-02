@@ -22,18 +22,19 @@ const Wrapper = styled.div`
   top: 20vh;
   ${forMobile} {
     left: calc(50vw - 15vh);
-    top: 23vh;
+    top: 29vh;
+    top: 29dvh;
   }
 `;
 
 const LocationTitle = styled.div`
   position: absolute;
-  top: -90px;
+  top: -84px;
   left: ${displacementLength};
   display: flex;
   flex-direction: row;
   ${forMobile} {
-    top: -45px;
+    top: -38px;
   }
 `;
 
@@ -61,7 +62,7 @@ const CityTitle = styled.div`
     -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
   }
   ${forMobile} {
-    font-size: 50px;
+    font-size: 45px;
   }
 `;
 
@@ -71,13 +72,13 @@ const CountryTitle = styled.div`
   margin-top: 35px;
   ${forMobile} {
     font-size: 25px;
-    margin-top: 17px;
+    margin-top: 13px;
   }
 `;
 
 const YearTitle = styled.div`
   position: absolute;
-  top: -50px;
+  top: -48px;
   right: ${displacementLength};
   font-size: 45px;
   font-weight: bold;
@@ -86,7 +87,7 @@ const YearTitle = styled.div`
   ${forMobile} {
     font-size: 25px;
     -webkit-text-stroke: 2px ${orange};
-    top: -30px;
+    top: -26px;
   }
 `;
 
@@ -120,6 +121,7 @@ const Image = styled.div`
   }
   ${forMobile} {
     width: 30vh;
+    height: 50dvh;
   }
   background-position: ${(props) =>
     props.city === "Chicago" ? "bottom" : "center"};
@@ -130,12 +132,14 @@ const ImageOverlay = styled.div`
   top: 0;
   width: 60vh;
   height: 60vh;
+  height: 60dvh;
   background: url(${(props) => props.image}) no-repeat center/cover;
   opacity: 0;
   animation: ${GlitchImage} 0.2s linear;
   pointer-events: none;
   ${forMobile} {
     width: 30vh;
+    height: 50dvh;
   }
 `;
 
@@ -147,7 +151,8 @@ const Arrow = styled.button`
   height: 30px;
   border: none;
   ${forMobile} {
-    top: calc(30vh - 10px);
+    top: calc(25vh - 10px);
+    top: calc(25dvh - 10px);
     width: 20px;
     height: 20px;
   }
@@ -182,7 +187,7 @@ const Dots = styled.div`
   justify-content: center;
   ${forMobile} {
     width: 30vh;
-    bottom: -40px;
+    bottom: -30px;
   }
 `;
 

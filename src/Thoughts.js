@@ -18,6 +18,7 @@ const Articles = styled.div`
     left: 50px;
     top: 200px;
     height: calc(100vh - 230px);
+    height: calc(100dvh - 230px);
     width: calc(100vw - 100px);
   }
 `;

@@ -19,6 +19,7 @@ const Wrapper = styled.div`
     left: 40px;
     width: calc(100vw - 80px);
     height: calc(100vh - 140px);
+    height: calc(100dvh - 140px);
   }
 `;
 
