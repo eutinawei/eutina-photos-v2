@@ -33,8 +33,8 @@ const TextWrapper = styled.div`
   overflow: scroll;
   scrollbar-width: none;
   ${forMobile} {
-    height: calc(70vh - 90px);
-    height: calc(70dvh - 90px);
+    height: calc(70vh - 120px);
+    height: calc(70dvh - 120px);
   }
 `;
 
