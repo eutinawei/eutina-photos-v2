@@ -22,7 +22,7 @@ const cities = [
     sites: [
       "Montana State Capitol",
       "Cathedral of St. Helena",
-      "Mount Helea",
+      "Mount Helena",
       "Holter Museum of Art",
     ],
     photoCount: 9,
