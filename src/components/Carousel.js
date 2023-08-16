@@ -221,13 +221,13 @@ const Dot = styled.button`
   }
 `;
 
-const Carousel = () => {
-  const preloadSeattleImage = seattleImage;
-  const preloadHelenaImage = helenaImage;
-  const preloadBayAreaImage = bayAreaImage;
-  const preloadChicagoImage = chicagoImage;
-  const preloadDCImage = dcImage;
+const preloadSeattleImage = seattleImage;
+const preloadHelenaImage = helenaImage;
+const preloadBayAreaImage = bayAreaImage;
+const preloadChicagoImage = chicagoImage;
+const preloadDCImage = dcImage;
 
+const Carousel = () => {
   const [cityIndex, setCityIndex] = useState(0);
   const [cityImage, setCityImage] = useState(seattleImage);
 
@@ -238,14 +238,7 @@ const Carousel = () => {
       setCityImage(preloadBayAreaImage);
     if (cities[cityIndex].name === "Chicago") setCityImage(preloadChicagoImage);
     if (cities[cityIndex].name === "DC") setCityImage(preloadDCImage);
-  }, [
-    cityIndex,
-    preloadBayAreaImage,
-    preloadChicagoImage,
-    preloadDCImage,
-    preloadHelenaImage,
-    preloadSeattleImage,
-  ]);
+  }, [cityIndex]);
 
   const upCityIndex = () => {
     if (cityIndex === cities.length - 1) setCityIndex(0);
