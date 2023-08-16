@@ -222,15 +222,30 @@ const Dot = styled.button`
 `;
 
 const Carousel = () => {
+  const preloadSeattleImage = seattleImage;
+  const preloadHelenaImage = helenaImage;
+  const preloadBayAreaImage = bayAreaImage;
+  const preloadChicagoImage = chicagoImage;
+  const preloadDCImage = dcImage;
+
   const [cityIndex, setCityIndex] = useState(0);
   const [cityImage, setCityImage] = useState(seattleImage);
+
   useEffect(() => {
-    if (cities[cityIndex].name === "Seattle") setCityImage(seattleImage);
-    if (cities[cityIndex].name === "Helena") setCityImage(helenaImage);
-    if (cities[cityIndex].name === "Bay Area") setCityImage(bayAreaImage);
-    if (cities[cityIndex].name === "Chicago") setCityImage(chicagoImage);
-    if (cities[cityIndex].name === "DC") setCityImage(dcImage);
-  }, [cityIndex]);
+    if (cities[cityIndex].name === "Seattle") setCityImage(preloadSeattleImage);
+    if (cities[cityIndex].name === "Helena") setCityImage(preloadHelenaImage);
+    if (cities[cityIndex].name === "Bay Area")
+      setCityImage(preloadBayAreaImage);
+    if (cities[cityIndex].name === "Chicago") setCityImage(preloadChicagoImage);
+    if (cities[cityIndex].name === "DC") setCityImage(preloadDCImage);
+  }, [
+    cityIndex,
+    preloadBayAreaImage,
+    preloadChicagoImage,
+    preloadDCImage,
+    preloadHelenaImage,
+    preloadSeattleImage,
+  ]);
 
   const upCityIndex = () => {
     if (cityIndex === cities.length - 1) setCityIndex(0);
