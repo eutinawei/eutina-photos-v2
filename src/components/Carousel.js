@@ -221,23 +221,21 @@ const Dot = styled.button`
   }
 `;
 
-const preloadSeattleImage = seattleImage;
-const preloadHelenaImage = helenaImage;
-const preloadBayAreaImage = bayAreaImage;
-const preloadChicagoImage = chicagoImage;
-const preloadDCImage = dcImage;
+const PreloadImage = styled.div`
+  background: url(${(props) => props.image});
+  display: none;
+`;
 
 const Carousel = () => {
   const [cityIndex, setCityIndex] = useState(0);
   const [cityImage, setCityImage] = useState(seattleImage);
 
   useEffect(() => {
-    if (cities[cityIndex].name === "Seattle") setCityImage(preloadSeattleImage);
-    if (cities[cityIndex].name === "Helena") setCityImage(preloadHelenaImage);
-    if (cities[cityIndex].name === "Bay Area")
-      setCityImage(preloadBayAreaImage);
-    if (cities[cityIndex].name === "Chicago") setCityImage(preloadChicagoImage);
-    if (cities[cityIndex].name === "DC") setCityImage(preloadDCImage);
+    if (cities[cityIndex].key === "seattle") setCityImage(seattleImage);
+    if (cities[cityIndex].key === "helena") setCityImage(helenaImage);
+    if (cities[cityIndex].key === "bayarea") setCityImage(bayAreaImage);
+    if (cities[cityIndex].key === "chicago") setCityImage(chicagoImage);
+    if (cities[cityIndex].key === "dc") setCityImage(dcImage);
   }, [cityIndex]);
 
   const upCityIndex = () => {
@@ -280,6 +278,11 @@ const Carousel = () => {
           else return <Dot onClick={() => setCityIndex(index)} key={index} />;
         })}
       </Dots>
+      <PreloadImage image={seattleImage} />
+      <PreloadImage image={helenaImage} />
+      <PreloadImage image={bayAreaImage} />
+      <PreloadImage image={chicagoImage} />
+      <PreloadImage image={dcImage} />
     </Wrapper>
   );
 };
