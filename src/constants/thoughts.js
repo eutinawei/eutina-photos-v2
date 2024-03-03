@@ -1,5 +1,12 @@
 const thoughts = [
   {
+    key: "goodperson",
+    title: "I Want to Be a Good Person",
+    date: "March 03, 2024",
+    image: "goodperson",
+    text: "I want to be a good person.\n\nReflecting on how one distinguishes between good and bad individuals, I've come to realize the futility of this pursuit. The premise is incorrect, and the notion itself is flawed; it is impossible to divide humanity into pure virtue or outright evilness.\n\nHowever, my aspiration remains unchanged - I seek to cultivate goodness within myself. I strive to be someone who can genuinely declare, without a trace of falsehood, that I am content with the person I am in every moment. I want to be a good person.",
+  },
+  {
     key: "twoyearsinthestates",
     title: "Two Years in the States",
     date: "August 13, 2023",
