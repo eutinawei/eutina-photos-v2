@@ -11,7 +11,7 @@ const cities = [
       "Space Needle",
       "Museum of Pop Culture",
     ],
-    photoCount: 6,
+    photoCount: 8,
   },
   {
     index: 1,
