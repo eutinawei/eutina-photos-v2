@@ -4,6 +4,12 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+// Import Google Font link
+const link = document.createElement("link");
+link.href = "https://fonts.googleapis.com/css2?family=Inter&display=swap";
+link.rel = "stylesheet";
+document.head.appendChild(link);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
