@@ -7,7 +7,7 @@ import leftArrowHover from "../assets/home/left-arrow-hover.png";
 import rightArrow from "../assets/home/right-arrow.png";
 import rightArrowHover from "../assets/home/right-arrow-hover.png";
 import seattleImage from "../assets/home/seattle.jpg";
-import helenaImage from "../assets/home/helena.jpg";
+import montanaImage from "../assets/home/montana.jpg";
 import caliImage from "../assets/home/cali.jpg";
 import chicagoImage from "../assets/home/chicago.jpg";
 import dcImage from "../assets/home/dc.jpg";
@@ -228,12 +228,12 @@ const PreloadImage = styled.div`
 
 const Carousel = () => {
   const [cityIndex, setCityIndex] = useState(0);
-  const [cityImage, setCityImage] = useState(seattleImage);
+  const [cityImage, setCityImage] = useState(caliImage);
 
   useEffect(() => {
-    if (cities[cityIndex].key === "seattle") setCityImage(seattleImage);
-    if (cities[cityIndex].key === "helena") setCityImage(helenaImage);
     if (cities[cityIndex].key === "cali") setCityImage(caliImage);
+    if (cities[cityIndex].key === "seattle") setCityImage(seattleImage);
+    if (cities[cityIndex].key === "montana") setCityImage(montanaImage);
     if (cities[cityIndex].key === "chicago") setCityImage(chicagoImage);
     if (cities[cityIndex].key === "dc") setCityImage(dcImage);
   }, [cityIndex]);
@@ -279,7 +279,7 @@ const Carousel = () => {
         })}
       </Dots>
       <PreloadImage image={seattleImage} />
-      <PreloadImage image={helenaImage} />
+      <PreloadImage image={montanaImage} />
       <PreloadImage image={caliImage} />
       <PreloadImage image={chicagoImage} />
       <PreloadImage image={dcImage} />
