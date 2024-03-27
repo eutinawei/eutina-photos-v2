@@ -8,7 +8,7 @@ import rightArrow from "../assets/home/right-arrow.png";
 import rightArrowHover from "../assets/home/right-arrow-hover.png";
 import seattleImage from "../assets/home/seattle.jpg";
 import helenaImage from "../assets/home/helena.jpg";
-import bayAreaImage from "../assets/home/bayarea.jpg";
+import caliImage from "../assets/home/cali.jpg";
 import chicagoImage from "../assets/home/chicago.jpg";
 import dcImage from "../assets/home/dc.jpg";
 import cities from "../constants/cities";
@@ -233,7 +233,7 @@ const Carousel = () => {
   useEffect(() => {
     if (cities[cityIndex].key === "seattle") setCityImage(seattleImage);
     if (cities[cityIndex].key === "helena") setCityImage(helenaImage);
-    if (cities[cityIndex].key === "bayarea") setCityImage(bayAreaImage);
+    if (cities[cityIndex].key === "cali") setCityImage(caliImage);
     if (cities[cityIndex].key === "chicago") setCityImage(chicagoImage);
     if (cities[cityIndex].key === "dc") setCityImage(dcImage);
   }, [cityIndex]);
@@ -280,7 +280,7 @@ const Carousel = () => {
       </Dots>
       <PreloadImage image={seattleImage} />
       <PreloadImage image={helenaImage} />
-      <PreloadImage image={bayAreaImage} />
+      <PreloadImage image={caliImage} />
       <PreloadImage image={chicagoImage} />
       <PreloadImage image={dcImage} />
     </Wrapper>

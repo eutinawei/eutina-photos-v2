@@ -1,6 +1,20 @@
 const cities = [
   {
     index: 0,
+    key: "cali",
+    name: "Cali",
+    country: "USA",
+    year: "2024",
+    sites: [
+      "Golden Gate Bridge",
+      "The Broad",
+      "Los Angeles County Museum of Art",
+      "Fisherman’s Wharf",
+    ],
+    photoCount: 14,
+  },
+  {
+    index: 1,
     key: "seattle",
     name: "Seattle",
     country: "USA",
@@ -14,7 +28,7 @@ const cities = [
     photoCount: 8,
   },
   {
-    index: 1,
+    index: 2,
     key: "helena",
     name: "Helena",
     country: "USA",
@@ -26,20 +40,6 @@ const cities = [
       "Holter Museum of Art",
     ],
     photoCount: 9,
-  },
-  {
-    index: 2,
-    key: "bayarea",
-    name: "Bay Area",
-    country: "USA",
-    year: "2023",
-    sites: [
-      "Golden Gate Bridge",
-      "Palace of Fine Arts",
-      "San Francisco Museum of Modern Art",
-      "Fisherman’s Wharf",
-    ],
-    photoCount: 11,
   },
   {
     index: 3,
