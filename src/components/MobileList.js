@@ -63,10 +63,10 @@ const MobileList = () => {
         <PlainText>home</PlainText>
         <OutlineText>home</OutlineText>
       </Home>
-      <Thoughts onClick={() => window.location.assign("/thoughts")}>
+      {/* <Thoughts onClick={() => window.location.assign("/thoughts")}>
         <OutlineText>thoughts</OutlineText>
         <BackgroundText>thoughts</BackgroundText>
-      </Thoughts>
+      </Thoughts> */}
       <About onClick={() => window.location.assign("/about")}>
         <BackgroundText>about</BackgroundText>
         <PlainText>about</PlainText>
@@ -76,8 +76,8 @@ const MobileList = () => {
           window.open("https://www.youtube.com/@eutinawei", "_blank")
         }
       >
-        <PlainText>youtube</PlainText>
         <OutlineText>youtube</OutlineText>
+        <BackgroundText>youtube</BackgroundText>
       </Youtube>
     </Wrapper>
   );
