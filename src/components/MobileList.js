@@ -37,6 +37,10 @@ const Youtube = styled(Title)`
   width: 225px;
 `;
 
+const Instagram = styled(Title)`
+  width: 270px;
+`;
+
 const PlainText = styled.div`
   font-size: 25px;
   &:not(:last-child) {
@@ -79,6 +83,14 @@ const MobileList = () => {
         <OutlineText>youtube</OutlineText>
         <BackgroundText>youtube</BackgroundText>
       </Youtube>
+      <Instagram
+        onClick={() =>
+          window.open("https://www.instagram.com/readyplayertona/", "_blank")
+        }
+      >
+        <PlainText>instagram</PlainText>
+        <OutlineText>instagram</OutlineText>
+      </Instagram>
     </Wrapper>
   );
 };

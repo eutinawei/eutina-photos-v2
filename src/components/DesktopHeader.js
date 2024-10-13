@@ -5,6 +5,8 @@ import homeIcon from "../assets/home/home.png";
 import homeIconHover from "../assets/home/home-hover.png";
 import youtubeIcon from "../assets/home/youtube.png";
 import youtubeIconHover from "../assets/home/youtube-hover.png";
+import igIcon from "../assets/home/instagram.png";
+import igIconHover from "../assets/home/instagram-hover.png";
 
 const orange = "#E85112";
 
@@ -58,6 +60,13 @@ const YoutubeIcon = styled(Icon)`
   }
 `;
 
+const IgIcon = styled(Icon)`
+  background: url(${igIcon}) no-repeat center/cover;
+  &:hover {
+    background: url(${igIconHover}) no-repeat center/cover;
+  }
+`;
+
 const TextIcon = styled.div`
   cursor: pointer;
   margin: 18px 0px;
@@ -94,6 +103,12 @@ const DesktopHeader = () => {
         <YoutubeIcon
           onClick={() =>
             window.open("https://www.youtube.com/@eutinawei", "_blank")
+          }
+        />
+        <OptionDivider />
+        <IgIcon
+          onClick={() =>
+            window.open("https://www.instagram.com/readyplayertona/", "_blank")
           }
         />
       </Options>
