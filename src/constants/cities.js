@@ -1,6 +1,20 @@
 const cities = [
   {
     index: 0,
+    key: "seattle",
+    name: "Seattle",
+    country: "USA",
+    year: "2025",
+    sites: [
+      "Seattle Art Museum",
+      "Chihuly Garden and Glass",
+      "Space Needle",
+      "Museum of Pop Culture",
+    ],
+    photoCount: 12,
+  },
+  {
+    index: 1,
     key: "cali",
     name: "Cali",
     country: "USA",
@@ -12,20 +26,6 @@ const cities = [
       "Fisherman’s Wharf",
     ],
     photoCount: 15,
-  },
-  {
-    index: 1,
-    key: "seattle",
-    name: "Seattle",
-    country: "USA",
-    year: "2023",
-    sites: [
-      "Seattle Art Museum",
-      "Chihuly Garden and Glass",
-      "Space Needle",
-      "Museum of Pop Culture",
-    ],
-    photoCount: 8,
   },
   {
     index: 2,
